@@ -1,0 +1,110 @@
+html,body,h3,li,ul{
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+// mixin
+@mixin box-sizing ($sizing) {
+  -webkit-box-sizing:$sizing;
+  -moz-box-sizing:$sizing;
+  -ms-box-sizing:$sizing;
+  -o-box-box-sizing:$sizing;
+  box-sizing:$sizing;
+}
+
+@mixin translate($x, $y){
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+.mgb10{
+  margin-bottom: 10px;
+}
+.pd10{
+  padding: 10px;
+}
+
+.basic{
+  margin: 10px;
+  padding: 10px;
+  border: dashed 1px green;
+  color: #fff;
+  font-size: 14px;
+  h3{
+    font: 16px/30px "微软雅黑";
+    color: green;
+    border-bottom: dashed 1px green;
+    margin-bottom: 10px;
+  }
+  *{
+    @include box-sizing(border-box);
+  }
+}
+
+// 清除浮动
+.clearfox{
+  zoom: 1;
+}
+.clearfox:after{
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.demo1 >li{
+  width: 25%;
+  height: 40px;
+  float: left;
+}
+.demo1 >li:nth-last-of-type(1){
+  background-color: pink;
+}
+.demo1 >li:nth-last-of-type(2){
+  background-color: blue;
+}
+.demo1 >li:nth-last-of-type(3){
+  background-color: green;
+}
+.demo1 >li:nth-last-of-type(4){
+  background-color: grey;
+}
+
+// 垂直水平居中
+.center-wrap{
+  position: relative;
+  height: 8em;
+  text-align: center;
+  background-color: #f3f3f3;
+  .center1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -3em;
+    margin-left: -7em;
+    width: 14em;
+    height: 6em;
+    background-color: #939aa2;
+    line-height:  6em;
+  }
+  .center2{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include translate(-50%, -50%);
+    background-color: #939aa2;
+  }
+  &.center3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+      background-color: #939aa2;
+    }
+  }
+}
