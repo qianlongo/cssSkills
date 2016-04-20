@@ -135,3 +135,66 @@ li {
   .selection::-moz-selection {
     color: green;
     background-color: pink; }
+
+.ribbon-wrap > div {
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background-color: #f3f3f3; }
+  .ribbon-wrap > div .ribbon {
+    background-color: #a00;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    /* rotate */
+    /* shadow */
+    -webkit-box-shadow: 0 0 10px #888;
+    -moz-box-shadow: 0 0 10px #888;
+    box-shadow: 0 0 10px #888; }
+    .ribbon-wrap > div .ribbon a {
+      border: 1px solid #faa;
+      color: #fff;
+      display: block;
+      font: bold 81.25% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 1px 0;
+      padding: 10px 50px;
+      text-align: center;
+      text-decoration: none;
+      /* shadow */
+      text-shadow: 0 0 5px #444; }
+  .ribbon-wrap > div .ribbon.top-left {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: -50px;
+    top: 40px; }
+  .ribbon-wrap > div .ribbon.top-right {
+    right: -50px;
+    top: 40px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .ribbon-wrap > div .ribbon.bottom-left {
+    left: -50px;
+    bottom: 40px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg); }
+  .ribbon-wrap > div .ribbon.bottom-right {
+    right: -50px;
+    bottom: 40px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg); }
