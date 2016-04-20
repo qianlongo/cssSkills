@@ -23,11 +23,19 @@ li{
   transform: translate($x, $y);
 }
 
+// colors
+$greyColor:#939aa2;
+
 .mgb10{
   margin-bottom: 10px;
 }
 .pd10{
   padding: 10px;
+}
+
+
+.line16{
+  line-height: 16px;
 }
 
 .basic{
@@ -89,7 +97,7 @@ li{
     margin-left: -7em;
     width: 14em;
     height: 6em;
-    background-color: #939aa2;
+    background-color:$greyColor;
     line-height:  6em;
   }
   .center2{
@@ -97,14 +105,77 @@ li{
     left: 50%;
     top: 50%;
     @include translate(-50%, -50%);
-    background-color: #939aa2;
+    background-color: $greyColor;
   }
   &.center3{
     display: flex;
     align-items: center;
     justify-content: center;
     span{
-      background-color: #939aa2;
+      background-color: $greyColor;
     }
+  }
+}
+
+// 文本末尾添加省略号
+.demo3{
+  background-color: $greyColor;
+}
+.ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  &.wh120{
+    width: 120px;
+  }
+}
+
+.more-line{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 20px;
+}
+
+// 制造文本的模糊效果
+.blurry{
+  color: transparent;
+  text-shadow:0 0 2px rgba(0,0,0,.5);
+}
+
+// 简洁动画loading效果
+
+.loading{
+  background-color: $greyColor;
+  &:after{
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    content: '\2026';
+    -webkit-animation: ellipsis 2s infinite;
+  }
+}
+
+@-webkit-keyframes ellipsis{
+  from{
+    width: 2px;
+  }
+  to{
+    width: 15px;
+  }
+}
+
+//自定义选中文本样式
+.selection{
+  color: #000;
+  &::selection{
+    color: green;
+    background-color: pink;
+  }
+  &::-moz-selection{
+    color: green;
+    background-color: pink;
   }
 }

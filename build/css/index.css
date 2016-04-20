@@ -12,6 +12,9 @@ li {
 .pd10 {
   padding: 10px; }
 
+.line16 {
+  line-height: 16px; }
+
 .basic {
   margin: 10px;
   padding: 10px;
@@ -86,3 +89,49 @@ li {
     justify-content: center; }
     .center-wrap.center3 span {
       background-color: #939aa2; }
+
+.demo3 {
+  background-color: #939aa2; }
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  .ellipsis.wh120 {
+    width: 120px; }
+
+.more-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 20px; }
+
+.blurry {
+  color: transparent;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); }
+
+.loading {
+  background-color: #939aa2; }
+  .loading:after {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    content: '\2026';
+    -webkit-animation: ellipsis 2s infinite; }
+
+@-webkit-keyframes ellipsis {
+  from {
+    width: 2px; }
+  to {
+    width: 15px; } }
+
+.selection {
+  color: #000; }
+  .selection::selection {
+    color: green;
+    background-color: pink; }
+  .selection::-moz-selection {
+    color: green;
+    background-color: pink; }
