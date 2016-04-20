@@ -198,3 +198,59 @@ li {
     -ms-transform: rotate(135deg);
     -o-transform: rotate(135deg);
     transform: rotate(135deg); }
+
+.placeholder input.modify {
+  padding: 6px; }
+
+.placeholder input.modify::-webkit-input-placeholder {
+  color: green;
+  background-color: #F9F7F7;
+  font-size: 14px; }
+
+.placeholder input.modify::-moz-input-placeholder {
+  color: green;
+  background-color: #F9F7F7;
+  font-size: 14px; }
+
+.placeholder input.modify::-ms-input-placeholder {
+  color: green;
+  background-color: #F9F7F7;
+  font-size: 14px; }
+
+.remove-highlight {
+  text-align: center; }
+  .remove-highlight a {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    margin-left: 20px; }
+  .remove-highlight a:nth-last-of-type(2) {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+
+.sink {
+  color: #000; }
+  .sink:first-letter {
+    float: left;
+    color: green;
+    font-size: 30px; }
+
+.triangle {
+  display: inline-block;
+  border: solid 10px transparent;
+  margin-left: 10px; }
+  .triangle.top {
+    border-bottom-color: green; }
+  .triangle.bottom {
+    border-top-color: green; }
+  .triangle.left {
+    border-right-color: green; }
+  .triangle.right {
+    border-left-color: green; }
+
+.pointer {
+  color: #000; }
+  .pointer * {
+    margin-left: 10px;
+    margin-bottom: 10px; }
+  .pointer a[href], .pointer input[type='submit'], .pointer input[type='image'], .pointer input[type='button'], .pointer label[for], .pointer select, .pointer button {
+    cursor: pointer; }

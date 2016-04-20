@@ -244,3 +244,81 @@ $greyColor:#939aa2;
     }
   }
 }
+
+// 占位符
+.placeholder{
+    input.modify{
+      padding: 6px;
+    }
+   input.modify::-webkit-input-placeholder{
+    color: green;
+    background-color: #F9F7F7;
+    font-size: 14px;
+   }
+   input.modify::-moz-input-placeholder{
+    color: green;
+    background-color: #F9F7F7;
+    font-size: 14px;
+   }
+   input.modify::-ms-input-placeholder{
+    color: green;
+    background-color: #F9F7F7;
+    font-size: 14px;
+   }
+}
+
+// 移动端元素点击去除边框
+.remove-highlight{
+  text-align: center;
+  a{
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    margin-left: 20px;
+  }
+  a:nth-last-of-type(2){
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  }
+}
+
+
+// 设置首字下沉
+.sink{
+  color: #000;
+  &:first-letter{
+		float:left;
+		color:green;
+		font-size:30px;
+  }
+}
+
+// 三角形
+.triangle{
+  display: inline-block;
+  border: solid 10px transparent;
+  margin-left: 10px;
+  &.top{
+    border-bottom-color: green;
+  }
+  &.bottom{
+    border-top-color: green;
+  }
+  &.left{
+    border-right-color: green;
+  }
+  &.right{
+    border-left-color: green;
+  }
+}
+
+// 手型
+.pointer{
+  color: #000;
+  *{
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  a[href],input[type='submit'], input[type='image'],input[type='button'], label[for], select, button {
+    cursor: pointer;
+  }
+}
