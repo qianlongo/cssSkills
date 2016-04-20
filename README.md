@@ -127,3 +127,164 @@ element::-moz-selection{
 }
 
 ```
+
+## 7、顶角贴纸效果
+> 有时候我们会有这样的需求，在一个列表展示页面，有一些列表项是新添加的、或者热度比较高的，就会要求在其上面添加一个贴纸效果的小条就像hexo默认博客的fork me on github那个效果一样，如下图。
+![贴纸效果](/2016-4/20/1.png)
+
+**接下来我们开始一步步完成最左边的这个效果**
+
+`html`
+
+```
+<div class="wrap">
+  <div class="ribbon">
+    <a href="#">Fork me on GitHub</a>
+  </div>
+</div>
+```
+
+`css`
+
+```
+/* 外层容器几本设置  */
+.wrap{
+  width: 160px;
+  height:160px;
+  overflow:hidden;
+  position: relative;
+  background-color: #f3f3f3;
+}
+
+.ribbon{
+  background-color: #a00;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  /* shadom */
+  -webkit-box-shadow: 0 0 10px #888;
+  -moz-box-shadow: 0 0 10px #888;
+  box-shadow: 0 0 10px #888;
+  /* rotate */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  /* position */
+  left: -50px;
+  top: 40px;
+}
+
+.ribbon a{
+  border: 1px solid #faa;
+  color: #fff;
+  display: block;
+  font: bold 81.25% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 1px 0;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  /* shadow */
+  text-shadow: 0 0 5px #444;
+}
+
+```
+
+## 8、input占位符
+> 当我们给部分input类型的设置placeholder属性的时候，有的时候需要修改其默认的样式。
+
+```
+input::-webkit-input-placeholder{
+  color: green;
+  background-color: #F9F7F7;
+  font-size: 14px;
+}
+input::-moz-input-placeholder{
+  color: green;
+  background-color: #F9F7F7;
+  font-size: 14px;
+}
+input::-ms-input-placeholder{
+  color: green;
+  background-color: #F9F7F7;
+  font-size: 14px;
+}
+
+```
+## 9、移动端可点击元素去处默认边框
+>在移动端浏览器上，当你点击一个链接或者通过Javascript定义的可点击元素的时候，会出现蓝色边框，说实话，这是很恶心的，怎么去掉呢?
+
+```
+-webkit-tap-highlight-color: rgba(255,255,255,0);
+
+```
+
+## 10、首字下沉
+> 要实现类似word中首字下沉的效果可以使用以下代码
+
+```
+element:first-letter{
+  float:left;
+  color:green;
+  font-size:30px;
+}
+```
+## 11、小三角
+> 在很多地方我们可以用得上小三角，接下来我们画一下四个方向的三角形
+
+
+```
+.triangle{
+  /* 基础样式 */
+  border:solid 10px transparent;
+}
+/*下*/
+.triangle.bottom{
+ border-top-color: green;
+}
+/*上*/
+.triangle.top{
+ border-bottom-color: green;
+}
+/*左*/
+.triangle.top{
+ border-right-color: green;
+}
+/*右*/
+.triangle.top{
+ border-left-color: green;
+}
+
+```
+**可以看出画一个小三角非常简单，只要两行样式就可以搞定，对于方向只要想着画哪个方向则设置反方向的样式属性就可以**
+
+## 12、鼠标手型
+> 一般情况下，我们希望在以下元素身上添加鼠标手型
+
+* a
+* submit
+* input[type="iamge"]
+* input[type="button"]
+* button
+* label
+* select
+
+```
+a[href],input[type='submit'], input[type='image'],input[type='button'], label[for], select, button {
+  cursor: pointer;
+}
+
+```
+
+## 13、屏蔽Webkit移动浏览器中元素高亮效果
+>在访问移动网站时，你会发现，在选中的元素周围会出现一些灰色的框框，使用以下代码屏蔽这种样式
+
+```
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+```
