@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>css mask</title>
+	<style>
+		#outerWrapper {
+			width: 450px;
+			height: 90px;
+			padding: 10px;
+			margin: 100px auto 0 auto;
+			border-radius: 55px;
+			box-shadow: 0 0 10px 6px #EAEBED;
+			background: #fff;
+		}
+		
+		#innerWrapper {
+			height: 100%;
+			border-radius: 45px;
+			overflow: hidden;
+			position: relative;
+		}
+		
+		.radio {
+			width: 90px;
+			height: 100%;
+			position: absolute;
+			margin: 0;
+			opacity: 0;
+		}
+		
+		#rightRadio {
+			right: 0;
+		}
+		
+		.radio:not(:checked) {
+			cursor: pointer;
+			background-color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="outerWrapper">
+		<div id="innerWrapper">
+			<input type="radio" id="leftRadio" class="radio" name="radio" />
+			<input type="radio" id="rightRadio" class="radio" name="radio" checked />
+		</div>
+	</div>
+</body>
+
+</html>
