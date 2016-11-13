@@ -13,10 +13,10 @@
 
 ```
 // 清除浮动
-.clearfox{
+.clearfix{
   zoom: 1;
 }
-.clearfox:after{
+.clearfix:after{
   display: block;
   content: '';
   clear: both;
